@@ -1,0 +1,43 @@
+.vista-sesiones {
+    padding: 1.5rem;
+}
+
+/* Título igual al resto del sistema */
+.titulo-seccion {
+    color: #1d4875;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+/* Contenedor de tabla */
+.tabla-contenedor {
+    background: #ffffff;
+    border: 1px solid #d6e0ea;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Encabezado de tabla */
+.tabla-sesiones thead {
+    background: linear-gradient(90deg, #1f4f86 0%, #2e6aa6 100%);
+    color: #ffffff;
+}
+
+/* Filas */
+.tabla-sesiones tbody tr {
+    transition: background 0.15s ease;
+}
+
+.tabla-sesiones tbody tr:hover {
+    background: #f1f6fb;
+}
+
+/* Estado vacío */
+.estado-vacio {
+    padding: 1rem;
+    background: #eef3f8;
+    border: 1px solid #d6e0ea;
+    border-radius: 12px;
+    color: #5d7288;
+    font-weight: 500;
+}

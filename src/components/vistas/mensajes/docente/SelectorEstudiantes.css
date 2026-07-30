@@ -1,0 +1,52 @@
+.selector-estudiantes {
+    width: 100%;
+}
+
+.selector-etiqueta {
+    color: #698093;
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+
+.selector-titulo {
+    color: #1d2d3f;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.selector-toggle button {
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.estudiante-item {
+    width: 100%;
+    border: 1px solid #dbe4ec;
+    border-radius: 14px;
+    background: #ffffff;
+    padding: 1rem;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.estudiante-item:hover {
+    border-color: #bfd0df;
+    background-color: #fbfdff;
+    box-shadow: 0 6px 14px rgba(28, 55, 87, 0.08);
+}
+
+.estudiante-item.activo {
+    border-color: #2e6aa6;
+    background: #f0f6fb;
+}
+
+.estudiante-nombre {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #21364b;
+}
+
+.estudiante-info {
+    font-size: 0.9rem;
+    color: #6a7e90;
+}

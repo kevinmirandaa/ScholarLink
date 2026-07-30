@@ -1,0 +1,324 @@
+/* ── VistaDocenteMensajes.css — Inbox premium ────────────────────────── */
+/* Compartido estilos base con el inbox del encargado */
+
+/* ── Contenedor inbox ────────────────────────────────────────────────── */
+.mensajes-inbox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  animation: inbox-fade 0.25s ease;
+}
+
+@keyframes inbox-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header del inbox ────────────────────────────────────────────────── */
+.inbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.inbox-titulo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f2a44;
+  margin: 0;
+}
+
+.inbox-sub {
+  font-size: 0.83rem;
+  color: #64748b;
+  margin: 0.15rem 0 0;
+}
+
+/* ── Botón compose ───────────────────────────────────────────────────── */
+.btn-compose {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  background: linear-gradient(135deg, #1a56db, #2563eb);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 12px rgba(26,86,219,0.2);
+}
+.btn-compose:hover {
+  background: linear-gradient(135deg, #1549c0, #1d55d5);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 18px rgba(26,86,219,0.3);
+}
+
+/* ── Estado vacío ────────────────────────────────────────────────────── */
+.inbox-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #94a3b8;
+  gap: 0.75rem;
+}
+
+.inbox-vacio-icon { font-size: 3.5rem; }
+
+.inbox-vacio p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0;
+}
+
+.inbox-vacio-sub {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  max-width: 280px;
+}
+
+/* ── Lista de conversaciones ─────────────────────────────────────────── */
+.inbox-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ── Item de conversación ────────────────────────────────────────────── */
+.inbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.inbox-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background 0.18s ease;
+}
+
+.inbox-item:hover {
+  box-shadow: 0 4px 18px rgba(15,42,68,0.1);
+  transform: translateY(-1px);
+  border-color: #cbd5e1;
+}
+
+.inbox-item-unread {
+  background: #f0f7ff;
+  border-color: #bfdbfe;
+}
+
+.inbox-item-unread::before { background: #1a56db; }
+
+/* ── Avatar del item ─────────────────────────────────────────────────── */
+.inbox-item-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a56db, #6d28d9);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(26,86,219,0.2);
+}
+
+/* ── Cuerpo del item ─────────────────────────────────────────────────── */
+.inbox-item-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.inbox-item-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.inbox-item-nombre {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #475569;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inbox-item-fecha {
+  font-size: 0.77rem;
+  color: #94a3b8;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.inbox-item-asunto {
+  font-size: 0.94rem;
+  color: #1e293b;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inbox-item-asunto.negrita {
+  font-weight: 700;
+  color: #0f2a44;
+}
+
+.inbox-item-preview {
+  font-size: 0.83rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Badges del item ─────────────────────────────────────────────────── */
+.inbox-item-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+
+.badge-unread {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1a56db;
+  flex-shrink: 0;
+}
+
+.badge-reply {
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: #fef3c7;
+  color: #92400e;
+  border-radius: 8px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+.badge-open {
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 8px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+.badge-tipo {
+  font-size: 0.68rem;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 2px 7px;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+.tipo-aviso   { background: #f3e8ff; color: #6d28d9; }
+.tipo-tarea   { background: #fef3c7; color: #92400e; }
+.tipo-mensaje { background: #e8f0fe; color: #1a56db; }
+
+/* ── Compose ─────────────────────────────────────────────────────────── */
+.mensajes-compose {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: inbox-fade 0.25s ease;
+}
+
+.compose-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.compose-titulo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f2a44;
+  margin: 0;
+}
+
+.btn-compose-cerrar {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #475569;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+.btn-compose-cerrar:hover { background: #fee2e2; color: #dc2626; border-color: #fecaca; }
+
+/* ── Estado de carga ─────────────────────────────────────────────────── */
+.inbox-estado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.inbox-error {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.btn-reintentar {
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  color: #475569;
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: all 0.15s ease;
+}
+.btn-reintentar:hover { background: #e2e8f0; }

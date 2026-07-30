@@ -1,0 +1,15 @@
+/* ── VistaEncargadoMensajes.css — Inbox encargado ────────────────────── */
+/* Reutiliza los estilos base del inbox (mismas clases) */
+/* Las clases .mensajes-inbox, .inbox-*, .badge-* están en VistaDocenteMensajes.css */
+/* Este archivo puede agregar variaciones específicas del encargado */
+
+.inbox-encargado-bienvenida {
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.87rem;
+  color: #1e3a8a;
+  font-weight: 500;
+}

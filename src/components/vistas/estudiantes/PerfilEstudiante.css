@@ -1,0 +1,207 @@
+/* ── Perfil completo ────────────────────────────────────────────────────── */
+.perfil-estudiante {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Cabecera ───────────────────────────────────────────────────────────── */
+.perfil-cabecera {
+  background: #fff;
+  border: 1px solid #dfe7ef;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.perfil-volver {
+  background: none;
+  border: none;
+  color: #1f4f86;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  align-self: flex-start;
+}
+.perfil-volver:hover { text-decoration: underline; }
+
+.perfil-identidad {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.perfil-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1f4f86;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.perfil-nombre {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #18324f;
+  margin: 0 0 0.2rem;
+}
+
+.perfil-datos {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #6b7f93;
+  margin: 0;
+}
+
+.perfil-encargados {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.perfil-encargados-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a5c6e;
+}
+
+.perfil-encargado-badge {
+  background: #e8f0fb;
+  color: #1f4f86;
+  border-radius: 20px;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ── Pestañas ───────────────────────────────────────────────────────────── */
+.perfil-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #dfe7ef;
+  margin-bottom: 0;
+}
+
+.perfil-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6b7f93;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.perfil-tab:hover {
+  color: #1f4f86;
+}
+
+.perfil-tab.activo {
+  color: #1f4f86;
+  border-bottom-color: #1f4f86;
+}
+
+/* ── Contenido ──────────────────────────────────────────────────────────── */
+.perfil-contenido {
+  background: #fff;
+  border: 1px solid #dfe7ef;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 1.25rem 1.5rem;
+  min-height: 200px;
+}
+
+.perfil-vacio {
+  color: #6b7f93;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+/* ── Lista de items ─────────────────────────────────────────────────────── */
+.perfil-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.perfil-item {
+  border: 1px solid #eef2f6;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  background: #fafcfd;
+}
+
+.perfil-item-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.perfil-item-titulo {
+  font-weight: 600;
+  color: #1d2d3f;
+  font-size: 0.92rem;
+}
+
+.perfil-item-fecha {
+  font-size: 0.78rem;
+  color: #6b7f93;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.perfil-item-texto {
+  font-size: 0.88rem;
+  color: #4a5c6e;
+  margin: 0 0 0.3rem;
+  line-height: 1.5;
+}
+
+.perfil-item-meta {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+/* Badges de tipo */
+.perfil-tipo {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.4rem;
+}
+
+.perfil-tipo-observacion {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.perfil-tipo-aviso {
+  background: #fce7f3;
+  color: #9d174d;
+}

@@ -1,0 +1,47 @@
+/* VistaActividades.css - Refactorizado para ScholarLink */
+
+.bg-light-success {
+  background-color: rgba(25, 135, 84, 0.05);
+}
+
+.bg-light-primary {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.animate-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajustes finos para Bootstrap */
+.card {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+}
+
+.ring-2 {
+  box-shadow: 0 0 0 2px var(--bs-primary);
+}
+
+.italic {
+  font-style: italic;
+}

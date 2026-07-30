@@ -1,0 +1,289 @@
+/* ── VistaPerfil.css ─────────────────────────────────────────────────── */
+
+.perfil-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  animation: perfil-fade-in 0.3s ease;
+}
+
+@keyframes perfil-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tarjeta base ────────────────────────────────────────────────────── */
+.perfil-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 12px rgba(15, 42, 68, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+.perfil-card:hover {
+  box-shadow: 0 4px 20px rgba(15, 42, 68, 0.1);
+}
+
+/* ── Identidad (avatar + nombre + rol) ──────────────────────────────── */
+.perfil-identidad {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.perfil-avatar {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a56db 0%, #6d28d9 100%);
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 16px rgba(26, 86, 219, 0.25);
+}
+
+.perfil-id-info {
+  flex: 1;
+  min-width: 180px;
+}
+
+.perfil-nombre-grande {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #0f2a44;
+  margin: 0 0 0.2rem;
+}
+
+.perfil-cedula {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0 0 0.25rem;
+}
+
+.perfil-subrol {
+  font-size: 0.88rem;
+  color: #475569;
+  margin: 0 0 0.5rem;
+  font-style: italic;
+}
+
+.perfil-rol-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+.perfil-id-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-left: auto;
+}
+
+/* ── Botones de perfil ───────────────────────────────────────────────── */
+.btn-perfil {
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-editar {
+  background: linear-gradient(135deg, #1a56db, #2563eb);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(26, 86, 219, 0.2);
+}
+.btn-editar:hover {
+  background: linear-gradient(135deg, #1549c0, #1d55d5);
+  transform: translateY(-1px);
+}
+
+.btn-password {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+.btn-password:hover {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.btn-guardar {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(5, 150, 105, 0.2);
+}
+.btn-guardar:hover:not(:disabled) {
+  background: linear-gradient(135deg, #047857, #059669);
+  transform: translateY(-1px);
+}
+.btn-guardar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-cancelar {
+  background: transparent;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+}
+.btn-cancelar:hover:not(:disabled) {
+  background: #f8fafc;
+  color: #334155;
+}
+
+/* ── Formulario de edición ───────────────────────────────────────────── */
+.perfil-form-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f2a44;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.perfil-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.perfil-grid-1col {
+  grid-template-columns: 1fr;
+}
+
+.perfil-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.perfil-campo label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.perfil-campo input {
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #0f2a44;
+  background: #f8fafc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+.perfil-campo input:focus {
+  border-color: #1a56db;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+.perfil-campo input::placeholder {
+  color: #94a3b8;
+}
+
+.perfil-form-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* ── Info de sólo lectura ─────────────────────────────────────────────── */
+.perfil-section-titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f2a44;
+  margin: 0 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.perfil-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.perfil-info-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 0.5rem;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+.perfil-info-row:hover {
+  background: #f8fafc;
+}
+
+.perfil-info-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.perfil-info-valor {
+  font-size: 0.96rem;
+  color: #1e293b;
+}
+
+.perfil-info-valor em {
+  color: #94a3b8;
+  font-style: normal;
+}
+
+.perfil-estado-activo {
+  color: #059669;
+  font-weight: 600;
+}
+
+/* ── Mensaje de feedback ─────────────────────────────────────────────── */
+.perfil-mensaje {
+  padding: 0.85rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  animation: perfil-fade-in 0.25s ease;
+}
+.perfil-msg-ok {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+.perfil-msg-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .perfil-grid { grid-template-columns: 1fr; }
+  .perfil-identidad { flex-direction: column; align-items: flex-start; }
+  .perfil-id-acciones { margin-left: 0; flex-direction: row; flex-wrap: wrap; }
+}

@@ -1,0 +1,182 @@
+/* Contenedor principal */
+.bandeja-encargado { display: flex; flex-direction: column; }
+
+.bandeja-encabezado {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.bandeja-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #18324f;
+  margin: 0;
+}
+
+.bandeja-contador {
+  font-size: 0.82rem;
+  color: #6b7f93;
+}
+
+/* Estado vacío */
+.bandeja-vacia {
+  background: #f8fbfd;
+  border: 1px dashed #c8d8e4;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.bandeja-vacia-texto {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5c6e;
+  margin: 0 0 0.4rem;
+}
+
+.bandeja-vacia-sub {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Estado de carga / error */
+.mensajes-estado {
+  padding: 2rem 0;
+  text-align: center;
+}
+.mensajes-estado-texto { color: #6b7f93; }
+.mensajes-estado-error { color: #c0392b; font-weight: 600; }
+.btn-msj-recargar {
+  background: #f0f4f8;
+  border: 1px solid #d0dce8;
+  border-radius: 7px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* Lista */
+.bandeja-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Item */
+.bandeja-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #fff;
+  border: 1px solid #dfe7ef;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: border-color 0.15s, background 0.1s;
+}
+
+.bandeja-item:hover {
+  border-color: #a8c0d8;
+  background: #f8fbfd;
+}
+
+.bandeja-item.no-leido {
+  background: #eef5fb;
+  border-color: #b8d2ea;
+}
+
+/* Indicador (punto) */
+.bandeja-item-indicador {
+  width: 10px;
+  flex-shrink: 0;
+  padding-top: 0.3rem;
+}
+
+.dot-nuevo {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #1f4f86;
+}
+
+/* Cuerpo */
+.bandeja-item-cuerpo { flex: 1; min-width: 0; }
+
+.bandeja-item-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.bandeja-item-asunto {
+  font-size: 0.95rem;
+  color: #1d2d3f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bandeja-item-asunto.negrita { font-weight: 700; }
+
+.bandeja-item-fecha {
+  font-size: 0.78rem;
+  color: #6b7f93;
+  flex-shrink: 0;
+}
+
+.bandeja-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.bandeja-item-remitente {
+  font-size: 0.85rem;
+  color: #4a5c6e;
+  font-weight: 500;
+}
+
+.bandeja-badge-abierto {
+  font-size: 0.72rem;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 20px;
+  padding: 0.1rem 0.5rem;
+  font-weight: 600;
+}
+
+.bandeja-item-preview {
+  font-size: 0.83rem;
+  color: #6b7f93;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Estado (derecha) */
+.bandeja-item-estado { flex-shrink: 0; padding-top: 0.1rem; }
+
+.estado-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.15rem 0.55rem;
+}
+
+.estado-nuevo {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.estado-leido {
+  background: #f1f5f9;
+  color: #6b7f93;
+}

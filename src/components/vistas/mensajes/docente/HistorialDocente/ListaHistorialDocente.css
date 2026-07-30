@@ -1,0 +1,105 @@
+.historial-titulo-general {
+    color: #1d2d3f;
+    font-weight: 600;
+}
+
+/* 🔥 TARJETA */
+.historial-card {
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    background: #ffffff;
+    border: 1px solid #dbe4ec;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.historial-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(28, 55, 87, 0.08);
+}
+
+/* 🔥 BARRA LATERAL */
+.historial-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    border-radius: 4px;
+}
+
+/* 🎨 COLORES */
+.tipo-mensaje::before { background: #2e6aa6; }
+.tipo-aviso::before { background: #2e6aa6; }
+.tipo-tarea::before { background: #2e7d32; }
+.tipo-observacion::before { background: #d97706; }
+
+/* 🔥 HEADER */
+.historial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+/* 🔵 PUNTO */
+.punto-nuevo {
+    color: #2e6aa6;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* 🏷️ BADGE */
+.badge-tipo {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* 🎨 BADGE COLORES */
+.badge-tipo.tipo-aviso {
+    background: #e3ecff;
+    color: #2e6aa6;
+}
+
+.badge-tipo.tipo-tarea {
+    background: #e4f4ea;
+    color: #2e7d32;
+}
+
+.badge-tipo.tipo-observacion {
+    background: #fff1e6;
+    color: #d97706;
+}
+
+.badge-tipo.tipo-mensaje {
+    background: #e3ecff;
+    color: #2e6aa6;
+}
+
+/* 🔥 TEXTO */
+.historial-titulo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1d2d3f;
+}
+
+.historial-contenido {
+    font-size: 0.95rem;
+    color: #5f7387;
+    margin-bottom: 8px;
+}
+
+.historial-footer {
+    font-size: 0.8rem;
+    color: #6a7e90;
+}
+
+.fecha {
+    font-size: 0.8rem;
+    color: #7a8fa3;
+}

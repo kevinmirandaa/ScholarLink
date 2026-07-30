@@ -1,0 +1,531 @@
+/* ── VistaCalendario.css ─────────────────────────────────────────────── */
+
+.cal-wrapper {
+  display: flex;
+  gap: 1.25rem;
+  height: 100%;
+  min-height: 600px;
+  animation: cal-fade 0.3s ease;
+}
+
+@keyframes cal-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────────── */
+.cal-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cal-sidebar-titulo {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 0.4rem;
+}
+
+.cal-sidebar-vacio {
+  font-size: 0.87rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.cal-sidebar-item {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.65rem 0.8rem;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.cal-sidebar-item:hover {
+  box-shadow: 0 3px 12px rgba(15,42,68,0.1);
+  transform: translateY(-1px);
+}
+
+.cal-sidebar-fecha {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.2rem;
+}
+
+.cal-sidebar-nombre {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.cal-sidebar-materia {
+  font-size: 0.76rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+}
+
+/* ── Main ────────────────────────────────────────────────────────────── */
+.cal-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────────────────── */
+.cal-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cal-toolbar-izq {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cal-titulo-nav {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f2a44;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cal-btn-hoy {
+  padding: 0.4rem 0.9rem;
+  border: 1.5px solid #1a56db;
+  background: #fff;
+  color: #1a56db;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.cal-btn-hoy:hover { background: #1a56db; color: #fff; }
+
+.cal-btn-nav {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+.cal-btn-nav:hover { background: #f1f5f9; color: #0f2a44; }
+
+.cal-modos {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.cal-btn-modo {
+  padding: 0.35rem 0.9rem;
+  border: none;
+  background: transparent;
+  color: #475569;
+  border-radius: 7px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.cal-btn-modo-activo {
+  background: #fff;
+  color: #1a56db;
+  box-shadow: 0 1px 6px rgba(15,42,68,0.1);
+}
+
+/* ── Vista container ─────────────────────────────────────────────────── */
+.cal-vista-container {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: auto;
+  box-shadow: 0 2px 12px rgba(15,42,68,0.05);
+}
+
+/* ── Badge de actividad ───────────────────────────────────────────────── */
+.cal-badge {
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+.cal-badge:hover { filter: brightness(0.92); }
+
+.cal-badge-titulo {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #1e293b;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+}
+
+/* ── Vista MES ────────────────────────────────────────────────────────── */
+.cal-mes { padding: 0.75rem; }
+
+.cal-mes-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 0.35rem;
+}
+
+.cal-mes-dh {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  padding: 0.4rem 0;
+}
+
+.cal-mes-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.cal-celda {
+  min-height: 90px;
+  border: 1px solid #f1f5f9;
+  border-radius: 8px;
+  padding: 0.4rem;
+  position: relative;
+  cursor: default;
+  transition: background 0.15s ease;
+}
+.cal-celda:hover { background: #f8fafc; }
+
+.cal-celda-vacia { background: transparent; border-color: transparent; cursor: default; }
+
+.cal-celda-hoy {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.cal-celda-hoy .cal-celda-num {
+  background: #1a56db;
+  color: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-celda-num {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  display: block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.cal-celda-con-acts { background: #f8faff; }
+
+.cal-celda-acts { display: flex; flex-direction: column; gap: 2px; }
+
+.cal-mas {
+  font-size: 0.68rem;
+  color: #1a56db;
+  font-weight: 600;
+  padding: 1px 4px;
+  cursor: pointer;
+}
+
+/* ── Vista SEMANA ─────────────────────────────────────────────────────── */
+.cal-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 100%;
+  min-height: 400px;
+}
+
+.cal-semana-col {
+  border-right: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+}
+.cal-semana-col:last-child { border-right: none; }
+.cal-semana-col-hoy { background: #eff6ff; }
+
+.cal-semana-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cal-semana-dh {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.cal-semana-num {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #334155;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-num-hoy {
+  background: #1a56db;
+  color: #fff;
+}
+
+.cal-semana-acts {
+  flex: 1;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow-y: auto;
+}
+
+.cal-semana-vacio {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ── Vista DÍA ────────────────────────────────────────────────────────── */
+.cal-dia { padding: 1.5rem; }
+
+.cal-dia-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cal-dia-titulo-hoy .cal-dia-num { color: #1a56db; }
+
+.cal-dia-nombre {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.cal-dia-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f2a44;
+}
+
+.cal-dia-badge-hoy {
+  background: #1a56db;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.cal-dia-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+  color: #94a3b8;
+  gap: 0.5rem;
+}
+.cal-dia-vacio-icon { font-size: 2.5rem; }
+
+.cal-dia-lista { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.cal-dia-item {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.cal-dia-item:hover {
+  box-shadow: 0 4px 16px rgba(15,42,68,0.1);
+  transform: translateY(-1px);
+}
+
+.cal-dia-item-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.cal-dia-item-tipo {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.cal-dia-item-materia {
+  font-size: 0.78rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.cal-dia-item-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.3rem;
+}
+
+.cal-dia-item-desc {
+  font-size: 0.87rem;
+  color: #475569;
+  margin: 0 0 0.4rem;
+}
+
+.cal-dia-item-grupo {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+/* ── Modal ────────────────────────────────────────────────────────────── */
+.cal-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(3px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cal-fade 0.2s ease;
+}
+
+.cal-modal {
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.75rem;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  animation: cal-modal-pop 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes cal-modal-pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.cal-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.cal-modal-tipo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.cal-modal-titulo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f2a44;
+  margin: 0;
+}
+
+.cal-modal-cerrar {
+  border: none;
+  background: #f1f5f9;
+  color: #475569;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+.cal-modal-cerrar:hover { background: #e2e8f0; }
+
+.cal-modal-desc {
+  font-size: 0.92rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.cal-modal-meta { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.cal-modal-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: #334155;
+}
+
+.cal-modal-relativa {
+  color: #1a56db;
+  font-weight: 600;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cal-wrapper { flex-direction: column; }
+  .cal-sidebar { width: 100%; flex-direction: row; overflow-x: auto; flex-wrap: nowrap; gap: 0.5rem; }
+  .cal-sidebar-item { min-width: 140px; }
+  .cal-semana { grid-template-columns: repeat(4, 1fr); }
+}

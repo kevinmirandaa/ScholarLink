@@ -1,0 +1,116 @@
+.migrupo-wrapper { padding: 0.5rem 0; }
+
+.migrupo-sin-grupo {
+  color: #6b7f93;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+.migrupo-card {
+  background: #fff;
+  border: 1px solid #dfe7ef;
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  max-width: 520px;
+}
+
+.migrupo-badge {
+  display: inline-block;
+  background: #e8f0fb;
+  color: #1f4f86;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 0.2rem 0.7rem;
+  margin-bottom: 0.75rem;
+}
+
+.migrupo-nombre {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #18324f;
+  margin: 0 0 1.25rem;
+}
+
+.migrupo-datos {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.migrupo-dato {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.migrupo-dato-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7f93;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.migrupo-dato-valor {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1d2d3f;
+}
+
+/* Sección docentes */
+.migrupo-seccion { margin-top: 0.5rem; }
+
+.migrupo-seccion-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #18324f;
+  margin-bottom: 0.75rem;
+}
+
+.migrupo-docentes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.migrupo-docente-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fff;
+  border: 1px solid #dfe7ef;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  max-width: 360px;
+}
+
+.migrupo-docente-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1f4f86;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.migrupo-docente-nombre {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1d2d3f;
+  margin: 0;
+}
+
+.migrupo-docente-subrol {
+  font-size: 0.78rem;
+  color: #6b7f93;
+  margin: 0;
+}

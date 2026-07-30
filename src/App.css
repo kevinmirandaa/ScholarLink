@@ -1,0 +1,300 @@
+/* ── App.css — Layout principal ScholarLink ─────────────────────────── */
+
+/* ═══════════════════════════════════════════════════════════════════════
+   SHELL PRINCIPAL
+═══════════════════════════════════════════════════════════════════════ */
+.app-shell {
+  min-height: 100vh;
+  background: var(--sl-bg);
+}
+
+.app-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Layout de dos paneles (menú + contenido) ────────────────────────── */
+.layout-principal {
+  display: flex;
+  flex: 1;
+  border-radius: 0 0 var(--sl-radius-xl) var(--sl-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--sl-shadow-lg);
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border);
+  border-top: none;
+  margin-top: 0;
+  min-height: calc(100vh - 90px);
+  transition: all var(--sl-transition);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PANEL PRINCIPAL (área de contenido)
+═══════════════════════════════════════════════════════════════════════ */
+.panel-principal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--sl-bg);
+  overflow-y: auto;
+}
+
+.panel-encabezado {
+  padding: 1.5rem 2rem 1rem;
+  background: var(--sl-surface);
+  border-bottom: 1px solid var(--sl-border);
+  animation: panel-slide-in 0.25s ease;
+}
+
+@keyframes panel-slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.panel-etiqueta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--sl-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 0.2rem;
+}
+
+.panel-titulo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--sl-text-primary);
+  margin: 0 0 0.2rem;
+  line-height: 1.2;
+}
+
+.panel-descripcion {
+  font-size: 0.88rem;
+  color: var(--sl-text-secondary);
+  margin: 0;
+}
+
+.panel-superficie {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  animation: panel-content-in 0.25s ease;
+}
+
+@keyframes panel-content-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DASHBOARD — TARJETAS
+═══════════════════════════════════════════════════════════════════════ */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.1rem;
+  animation: panel-content-in 0.3s ease;
+}
+
+.dashboard-card {
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border);
+  border-radius: var(--sl-radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: box-shadow var(--sl-transition), transform var(--sl-transition), border-color var(--sl-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sl-primary), var(--sl-accent));
+  opacity: 0;
+  transition: opacity var(--sl-transition);
+}
+
+.dashboard-card:hover {
+  box-shadow: var(--sl-shadow-md);
+  transform: translateY(-3px);
+  border-color: #c7d9f0;
+}
+
+.dashboard-card:hover::before { opacity: 1; }
+
+.dashboard-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sl-text-primary);
+  margin: 0;
+}
+
+.dashboard-card p {
+  font-size: 0.87rem;
+  color: var(--sl-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.dashboard-card button {
+  align-self: flex-start;
+  border: none;
+  background: var(--sl-primary);
+  color: #fff;
+  border-radius: var(--sl-radius-sm);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--sl-transition), transform var(--sl-transition);
+  margin-top: 0.25rem;
+  font-family: inherit;
+}
+
+.dashboard-card button:hover {
+  background: var(--sl-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TABLAS GLOBALES
+═══════════════════════════════════════════════════════════════════════ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+thead th {
+  background: var(--sl-surface-2);
+  color: var(--sl-text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--sl-border);
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--sl-border);
+  transition: background var(--sl-transition);
+}
+
+tbody tr:hover { background: var(--sl-surface-2); }
+
+tbody td { padding: 0.75rem 1rem; color: var(--sl-text-primary); }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   BOTONES GLOBALES (compatibilidad con vistas existentes)
+═══════════════════════════════════════════════════════════════════════ */
+.btn-primario, .btn-primary-sl {
+  border: none;
+  background: var(--sl-primary);
+  color: #fff;
+  border-radius: var(--sl-radius-sm);
+  padding: 0.55rem 1.15rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background var(--sl-transition), transform var(--sl-transition), box-shadow var(--sl-transition);
+}
+.btn-primario:hover, .btn-primary-sl:hover {
+  background: var(--sl-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26,86,219,0.2);
+}
+
+.btn-secundario, .btn-secondary-sl {
+  border: 1.5px solid var(--sl-border);
+  background: var(--sl-surface);
+  color: var(--sl-text-secondary);
+  border-radius: var(--sl-radius-sm);
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--sl-transition);
+}
+.btn-secundario:hover, .btn-secondary-sl:hover {
+  background: var(--sl-surface-2);
+  color: var(--sl-text-primary);
+}
+
+.btn-danger-sl {
+  border: none;
+  background: var(--sl-danger);
+  color: #fff;
+  border-radius: var(--sl-radius-sm);
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--sl-transition);
+}
+.btn-danger-sl:hover { background: #b91c1c; transform: translateY(-1px); }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FORMULARIOS GLOBALES
+═══════════════════════════════════════════════════════════════════════ */
+input, textarea, select {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   BADGES / CHIPS
+═══════════════════════════════════════════════════════════════════════ */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #e8f0fe;
+  color: var(--sl-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ESTADO VACÍO GLOBAL
+═══════════════════════════════════════════════════════════════════════ */
+.estado-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--sl-text-muted);
+  gap: 0.75rem;
+}
+
+.estado-vacio-icon { font-size: 3rem; }
+.estado-vacio-titulo { font-size: 1.1rem; font-weight: 700; color: var(--sl-text-secondary); }
+.estado-vacio-sub { font-size: 0.88rem; max-width: 320px; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .app-container { padding: 0; }
+  .layout-principal { border-radius: 0; border: none; min-height: calc(100vh - 70px); }
+  .panel-superficie { padding: 1rem; }
+  .panel-encabezado { padding: 1rem; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+}

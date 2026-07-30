@@ -1,0 +1,56 @@
+/* 🏰 CONTENEDOR */
+.filtros-historial {
+    background: #ffffff;
+    border: 1px solid #dbe4ec;
+    border-radius: 16px;
+    padding: 1.2rem;
+    box-shadow: 0 6px 14px rgba(28, 55, 87, 0.06);
+}
+
+/* 🔍 BUSCADOR */
+.input-buscador {
+    border-radius: 12px;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #dbe4ec;
+    transition: all 0.2s ease;
+}
+
+.input-buscador:focus {
+    border-color: #2e6aa6;
+    box-shadow: 0 0 0 3px rgba(46, 106, 166, 0.12);
+}
+
+/* 🏷️ LABEL */
+.filtro-label {
+    font-size: 0.85rem;
+    color: #6a7e90;
+    margin-bottom: 4px;
+    display: block;
+    font-weight: 500;
+}
+
+/* 🔽 INPUTS */
+.filtro-input {
+    border-radius: 10px;
+    border: 1px solid #dbe4ec;
+    transition: all 0.2s ease;
+}
+
+.filtro-input:focus {
+    border-color: #2e6aa6;
+    box-shadow: 0 0 0 2px rgba(46, 106, 166, 0.12);
+}
+
+/* 🔥 BOTÓN LIMPIAR */
+.boton-limpiar {
+    background: #eef3f8;
+    color: #1d4875;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.boton-limpiar:hover {
+    background: #dde7f1;
+}

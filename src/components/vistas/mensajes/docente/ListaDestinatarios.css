@@ -1,0 +1,25 @@
+.destinatarios {
+    margin-top: 1.5rem;
+}
+
+.destinatarios-titulo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1d2d3f;
+    margin-bottom: 0.5rem;
+}
+
+.destinatarios-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.destinatario-chip {
+    background: #eef5fb;
+    border: 1px solid #cfe0ef;
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    color: #1f4f86;
+}

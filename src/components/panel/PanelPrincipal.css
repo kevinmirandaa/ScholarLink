@@ -1,0 +1,156 @@
+/* ── PanelPrincipal.css ─────────────────────────────────────────────── */
+/* Las clases principales (.panel-principal, .panel-encabezado, etc.)
+   están definidas en App.css para reutilización global.
+   Este archivo mantiene solo overrides específicos del panel. */
+
+.panel-principal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--sl-bg, #f0f4f8);
+  overflow-y: auto;
+}
+
+.panel-encabezado {
+  padding: 1.25rem 1.75rem 1rem;
+  background: var(--sl-surface, #ffffff);
+  border-bottom: 1px solid var(--sl-border, #e2e8f0);
+  animation: panel-slide 0.22s ease;
+}
+
+@keyframes panel-slide {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.panel-etiqueta {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--sl-primary, #1a56db);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 0.2rem;
+}
+
+.panel-titulo {
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  font-weight: 800;
+  color: var(--sl-text-primary, #0f2a44);
+  margin: 0 0 0.15rem;
+  line-height: 1.2;
+}
+
+.panel-descripcion {
+  font-size: 0.875rem;
+  color: var(--sl-text-secondary, #475569);
+  margin: 0;
+}
+
+.panel-superficie {
+  flex: 1;
+  padding: 1.5rem 1.75rem;
+  animation: panel-content 0.25s ease;
+}
+
+@keyframes panel-content {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Dashboard inicio ────────────────────────────────────────────────── */
+.panel-encabezado.inicio-encabezado {
+  background: linear-gradient(135deg, #0f2a44 0%, #1a3f66 100%);
+}
+
+.panel-encabezado.inicio-encabezado .panel-etiqueta { color: #60a5fa; }
+.panel-encabezado.inicio-encabezado .panel-titulo { color: #fff; }
+.panel-encabezado.inicio-encabezado .panel-descripcion { color: #93c5fd; }
+
+/* ── Grid de dashboard ───────────────────────────────────────────────── */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* ── Tarjetas ────────────────────────────────────────────────────────── */
+.dashboard-card {
+  background: #ffffff;
+  border: 1px solid var(--sl-border, #e2e8f0);
+  border-radius: 16px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  animation: panel-content 0.3s ease;
+}
+
+.dashboard-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1a56db, #6d28d9);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 6px 24px rgba(15, 42, 68, 0.12);
+  transform: translateY(-3px);
+  border-color: #c7d9f0;
+}
+
+.dashboard-card:hover::after { opacity: 1; }
+
+.dashboard-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f2a44;
+  margin: 0;
+}
+
+.dashboard-card p {
+  font-size: 0.86rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.dashboard-card button {
+  align-self: flex-start;
+  border: none;
+  background: #1a56db;
+  color: #fff;
+  border-radius: 9px;
+  padding: 0.5rem 1.05rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 0.3rem;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.dashboard-card button:hover {
+  background: #1549c0;
+  transform: translateY(-1px);
+}
+
+/* ── Acceso no autorizado ────────────────────────────────────────────── */
+.acceso-denegado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.acceso-denegado-icon { font-size: 3rem; }

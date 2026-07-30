@@ -1,0 +1,209 @@
+/* 🔥 CONTENEDOR */
+.notificaciones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 🔥 TARJETA */
+.notificacion-card {
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    background: #ffffff;
+    border: 1px solid #dbe4ec;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.notificacion-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(28, 55, 87, 0.08);
+}
+
+/* 🔥 BARRA LATERAL */
+.notificacion-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    border-radius: 4px;
+}
+
+/* 🎨 COLORES POR TIPO */
+.tipo-mensaje::before { background: #2e6aa6; }
+.tipo-aviso::before { background: #2e6aa6; }
+.tipo-tarea::before { background: #2e7d32; }
+.tipo-observacion::before { background: #d97706; }
+
+/* 🔥 HEADER */
+.notificacion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+/* 🔵 PUNTO NO LEÍDO */
+.punto-nuevo {
+    color: #2e6aa6;
+    font-size: 1rem;
+}
+
+/* 🏷️ BADGE */
+.badge-tipo {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* 🎨 COLORES BADGE */
+.badge-tipo.tipo-mensaje {
+    background: #e3ecff;
+    color: #2e6aa6;
+}
+
+.badge-tipo.tipo-aviso {
+    background: #e3ecff;
+    color: #2e6aa6;
+}
+
+.badge-tipo.tipo-tarea {
+    background: #e4f4ea;
+    color: #2e7d32;
+}
+
+.badge-tipo.tipo-observacion {
+    background: #fff1e6;
+    color: #d97706;
+}
+
+/* 🔥 TEXTO */
+.notificacion-titulo {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1d2d3f;
+}
+
+.notificacion-contenido {
+    font-size: 0.92rem;
+    color: #5f7387;
+    margin-bottom: 6px;
+}
+
+/* 🔥 FOOTER */
+.notificacion-footer {
+    font-size: 0.8rem;
+    color: #6a7e90;
+}
+
+.fecha {
+    font-size: 0.75rem;
+    color: #7a8fa3;
+}
+
+.notificaciones-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.notificaciones-subtitulo {
+    color: #5f7387;
+    margin-bottom: 0;
+}
+
+.notificaciones-resumen {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.noti-resumen-item {
+    min-width: 90px;
+    padding: 0.75rem 0.9rem;
+    border-radius: 12px;
+    border: 1px solid #dbe4ec;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noti-resumen-item strong {
+    font-size: 1.1rem;
+    color: #1d2d3f;
+}
+
+.noti-resumen-item span {
+    font-size: 0.82rem;
+    color: #6a7e90;
+}
+
+.noti-resumen-pendientes {
+    background: #eef5ff;
+    border-color: #bfd4f2;
+}
+
+.notificacion-alerta {
+    margin-bottom: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: #fff7e6;
+    border: 1px solid #ffd18a;
+    color: #8a5b00;
+}
+
+.notificacion-no-leida {
+    border-color: #bfd4f2;
+    background: #f9fbff;
+}
+
+.notificacion-leida {
+    opacity: 0.95;
+}
+
+.estado-lectura {
+    font-size: 0.74rem;
+    border-radius: 999px;
+    padding: 0.22rem 0.55rem;
+    font-weight: 600;
+}
+
+.estado-no-leido {
+    background: #e8f1ff;
+    color: #24558a;
+}
+
+.estado-leido {
+    background: #edf2f7;
+    color: #5f7387;
+}
+
+.notificacion-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.badge-tipo.tipo-comunicado {
+    background: #fff2e6;
+    color: #b25d08;
+}
+
+.badge-tipo.tipo-actividad,
+.badge-tipo.tipo-evaluacion {
+    background: #e4f4ea;
+    color: #2e7d32;
+}
+
+.tipo-comunicado::before { background: #d97706; }
+.tipo-actividad::before,
+.tipo-evaluacion::before { background: #2e7d32; }

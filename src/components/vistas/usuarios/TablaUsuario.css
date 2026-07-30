@@ -1,0 +1,63 @@
+.tabla-usuarios thead {
+    background: linear-gradient(90deg, #1f4f86 0%, #2e6aa6 100%);
+    color: white;
+}
+
+.estado-acceso.pendiente {
+    color: #c28b00;
+    font-weight: 600;
+}
+
+.estado-acceso.activo {
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.boton-editar {
+    background: #dde7f1;
+    color: #1d4875;
+    border: none;
+}
+
+.boton-editar:hover {
+    background: #cfddeb;
+}
+
+.boton-eliminar {
+    background: #f8d7da;
+    color: #842029;
+    border: none;
+}
+
+.boton-eliminar:hover {
+    background: #f1c2c7;
+}
+
+/* 🔥 NUEVO (subrol, sin romper tu diseño) */
+.rol-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.rol-principal {
+    font-weight: 600;
+    color: #1d2d3f;
+    text-transform: capitalize;
+}
+
+.rol-sub {
+    font-size: 0.85rem;
+    color: #6a7e90;
+}
+
+/* Badge cuando el usuario tiene múltiples roles */
+.rol-badge {
+    display: inline-block;
+    background: #eef4fc;
+    border: 1px solid #c0d5ed;
+    border-radius: 4px;
+    padding: 0 0.4rem;
+    font-size: 0.78rem;
+    margin-bottom: 0.15rem;
+}

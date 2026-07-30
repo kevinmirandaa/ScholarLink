@@ -1,0 +1,9 @@
+.login-contenedor {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(180deg, #f8fbfd 0%, #f4f8fb 100%);
+    padding: 1.5rem;
+}
